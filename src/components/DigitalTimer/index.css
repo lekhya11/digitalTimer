@@ -1,0 +1,42 @@
+.app-container {
+  background-image: linear-gradient(to right, #ffffff, #cffcf1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-heading {
+}
+
+.timer-container {
+}
+
+.timer-image {
+}
+
+.circle-time {
+}
+
+.display-container {
+}
+
+.start-reset-container {
+}
+
+.icon {
+}
+
+.para {
+}
+
+.mini-para {
+}
+
+.increment-container {
+}
+
+.plus-button {
+}
+
+.button {
+}
