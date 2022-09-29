@@ -3,40 +3,150 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .main-heading {
+  color: #0f172a;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: xx-large;
+  margin: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-heading {
+    font-size: 70px;
+    font-weight: bolder;
+    margin-top: none;
+  }
 }
 
 .timer-container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer-image {
+  height: 500px;
+  width: 500px;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle-time {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time-heading {
+  color: aquamarine;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
 .display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 50%;
 }
 
 .start-reset-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.icon-name {
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 9px;
 }
 
 .icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
 }
 
 .para {
+  color: #0f172a;
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: large;
 }
 
 .mini-para {
+  font-size: smaller;
+  font-family: 'Roboto';
+  margin: 9px;
+}
+
+@media screen and (min-width: 768px) {
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
+  .para {
+    font-weight: bold;
+    font-size: 30px;
+  }
+  .mini-para {
+    font-size: medium;
+    font-weight: 600;
+  }
 }
 
 .increment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .plus-button {
+  font-size: x-large;
+  color: #0f172a;
+  background-color: transparent;
+  border: none;
 }
 
 .button {
+  background-image: linear-gradient(to right, aquamarine, #00d9f5);
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  height: 25px;
+  width: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .plus-button {
+    font-size: xx-large;
+  }
+
+  .button {
+    height: 40px;
+    width: 55px;
+    font-size: larger;
+    font-weight: 800;
+    border-radius: 5px;
+  }
 }
