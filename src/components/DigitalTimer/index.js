@@ -3,13 +3,20 @@ import {Component} from 'react'
 import './index.css'
 
 const startUrl = 'https://assets.ccbp.in/frontend/react-js/play-icon-img.png '
-// const pausedUrl = ' https://assets.ccbp.in/frontend/react-js/pause-icon-img.png'
+const pausedUrl = ' https://assets.ccbp.in/frontend/react-js/pause-icon-img.png'
 const resetUrl = 'https://assets.ccbp.in/frontend/react-js/reset-icon-img.png'
 
 class DigitalTimer extends Component {
   state = {
     timeValue: 25,
-    // isStarted: false,
+    isStarted: false,
+    setSeconds: 0,
+  }
+
+  getSeconds = () => {
+    const timer = setInterval(() => {
+      this.setState(prev => ({setSeconds: prev.setSeconds - 1}))
+    }, 1000)
   }
 
   onClickMinus = () => {
@@ -20,8 +27,18 @@ class DigitalTimer extends Component {
     this.setState(prevState => ({timeValue: prevState.timeValue + 1}))
   }
 
+  OnClickStart = () => {
+    this.setState(prevState => ({isStarted: !prevState.isStarted}))
+
+    this.getSeconds()
+  }
+
+  onClickReset = () => {
+    this.setState({timeValue: 25})
+  }
+
   render() {
-    const {timeValue} = this.state
+    const {timeValue, isStarted, setSeconds} = this.state
 
     return (
       <div className="app-container">
@@ -29,19 +46,43 @@ class DigitalTimer extends Component {
         <div className="timer-container">
           <div className="timer-image">
             <div className="circle-time">
-              <h1 className="time-heading">{timeValue}:00</h1>
+              <h1 className="time-heading">
+                {timeValue}:
+                {setSeconds < 10 ? `'0' + {setSeconds}` : {setSeconds}}
+              </h1>
+              {isStarted ? (
+                <p className="time-para">Running</p>
+              ) : (
+                <p className="time-para">Paused</p>
+              )}
             </div>
           </div>
           <div className="display-container">
             <div className="start-reset-container">
               <div className="icon-name">
-                <button type="button" className="trans-button">
-                  <img src={startUrl} alt="play icon" className="icon" />
+                <button
+                  type="button"
+                  className="trans-button"
+                  onClick={this.OnClickStart}
+                >
+                  {isStarted ? (
+                    <img src={pausedUrl} alt="pause icon" className="icon" />
+                  ) : (
+                    <img src={startUrl} alt="play icon" className="icon" />
+                  )}
                 </button>
-                <p className="para">Start</p>
+                {isStarted ? (
+                  <p className="para">Paused</p>
+                ) : (
+                  <p className="para">Start</p>
+                )}
               </div>
               <div className="icon-name">
-                <button type="button" className="trans-button">
+                <button
+                  type="button"
+                  className="trans-button"
+                  onClick={this.onClickReset}
+                >
                   <img src={resetUrl} alt="reset icon" className="icon" />
                 </button>
                 <p className="para">Reset</p>
@@ -75,3 +116,4 @@ class DigitalTimer extends Component {
 }
 
 export default DigitalTimer
+
