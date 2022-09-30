@@ -1,166 +1,240 @@
 .app-container {
-  background-image: linear-gradient(to right, #ffffff, #cffcf1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.main-heading {
-  color: #0f172a;
-  font-family: 'Roboto';
-  font-weight: bold;
-  font-size: xx-large;
-  margin: 20px;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff,
+    #cffcf1,
+    #cffcf1,
+    #defafe
+  );
 }
 
 @media screen and (min-width: 768px) {
-  .main-heading {
-    font-size: 70px;
-    font-weight: bolder;
-    margin-top: none;
+  .app-container {
+    background-image: linear-gradient(
+      to right,
+      #ffffff,
+      #cffcf1,
+      #cffcf1,
+      #defafe
+    );
   }
 }
 
-.timer-container {
-  width: 75%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.heading {
+  color: #0f172a;
+  font-family: 'Roboto';
+  font-size: 32px;
+  font-weight: 500;
 }
 
-.timer-image {
-  height: 500px;
-  width: 500px;
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: 48px;
+  }
+}
+
+.digital-timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .digital-timer-container {
+    flex-direction: row;
+    max-width: 1140px;
+  }
+}
+
+.timer-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 250px;
   background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-position: center;
 }
 
-.circle-time {
-  height: 150px;
-  width: 150px;
-  border-radius: 75px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.time-heading {
-  color: aquamarine;
-  font-weight: bolder;
-  font-size: 50px;
-  margin: 3px;
-}
-
-.time-para {
-  color: red;
-  font-family: 'Roboto';
-  font-size: medium;
-  font-weight: 700;
-}
-
-.display-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-width: 50%;
-}
-
-.start-reset-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.icon-name {
-  margin: 3px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 9px;
-}
-
-.icon {
-  height: 20px;
-  width: 20px;
-  margin-right: 3px;
-}
-
-.para {
-  color: #0f172a;
-  font-family: 'Roboto';
-  font-weight: 600;
-  font-size: large;
-}
-
-.mini-para {
-  font-size: smaller;
-  font-family: 'Roboto';
-  margin: 9px;
+@media (min-width: 576px) {
+  .timer-display-container {
+    width: 450px;
+    height: 320px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .icon {
-    height: 50px;
-    width: 50px;
-  }
-  .para {
-    font-weight: bold;
-    font-size: 30px;
-  }
-  .mini-para {
-    font-size: medium;
-    font-weight: 600;
+  .timer-display-container {
+    width: 600px;
+    height: 450px;
   }
 }
 
-.increment-container {
+@media (min-width: 992px) {
+  .timer-display-container {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.elapsed-time-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+@media (min-width: 576px) {
+  .elapsed-time-container {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .elapsed-time-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.elapsed-time {
+  color: #00d9f5;
+  font-family: 'Roboto';
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .elapsed-time {
+    font-size: 48px;
+  }
+}
+
+.timer-state {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .timer-state {
+    font-size: 24px;
+  }
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.timer-controller-container {
+  display: flex;
   align-items: center;
 }
 
-.plus-button {
-  font-size: x-large;
-  color: #0f172a;
+.timer-controller-btn {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   border: none;
-}
-
-.button {
-  background-image: linear-gradient(to right, aquamarine, #00d9f5);
-  margin: 10px;
-  border-radius: 3px;
-  border: none;
+  margin-right: 16px;
+  margin-left: 16px;
+  padding: 0px;
+  cursor: pointer;
   outline: none;
-  padding: 5px;
-  height: 25px;
-  width: 35px;
 }
 
-@media screen and (min-width: 768px) {
-  .plus-button {
-    font-size: xx-large;
-  }
+.timer-controller-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
 
-  .button {
-    height: 40px;
-    width: 55px;
-    font-size: larger;
-    font-weight: 800;
-    border-radius: 5px;
+@media (min-width: 576px) {
+  .timer-controller-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
   }
 }
 
-.trans-button {
+.timer-controller-label {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  .timer-controller-label {
+    font-size: 32px;
+  }
+}
+
+.timer-limit-controller-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.limit-label {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.timer-limit-controller {
+  display: flex;
+  align-items: center;
+}
+
+.limit-controller-button {
+  color: #1e293b;
   background-color: transparent;
+  font-family: 'Roboto';
+  font-size: 40px;
+  font-weight: 500;
   border: none;
+  margin: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.limit-label-and-value-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px;
+}
+
+.limit-value {
+  text-align: center;
+  color: #1e293b;
+  background-image: linear-gradient(to right, #00f5a0, #00d9f5);
+  font-family: 'Roboto';
+  font-size: 32px;
+  font-weight: 500;
+  width: 100px;
+  border-radius: 8px;
+  margin: 0px;
+  padding: 8px;
 }
