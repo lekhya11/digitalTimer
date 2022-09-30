@@ -47,6 +47,7 @@
   border-radius: 75px;
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -54,6 +55,14 @@
   color: aquamarine;
   font-weight: bolder;
   font-size: 50px;
+  margin: 3px;
+}
+
+.time-para {
+  color: red;
+  font-family: 'Roboto';
+  font-size: medium;
+  font-weight: 700;
 }
 
 .display-container {
@@ -149,4 +158,9 @@
     font-weight: 800;
     border-radius: 5px;
   }
+}
+
+.trans-button {
+  background-color: transparent;
+  border: none;
 }
